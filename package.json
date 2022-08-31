@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:staged": "jest",
     "prepare": "husky install && chmod +x .husky/**/*"
   },
   "repository": {
@@ -19,10 +20,13 @@
   },
   "homepage": "https://github.com/rafaelmaltez/ts-node-clean-arch-survey-api#readme",
   "devDependencies": {
+    "@types/jest": "^29.0.0",
     "@types/node": "^18.7.14",
     "git-commit-msg-linter": "^4.1.3",
     "husky": "^8.0.1",
+    "jest": "^28.1.3",
     "lint-staged": "^13.0.3",
+    "ts-jest": "^28.0.8",
     "typescript": "^4.8.2"
   },
   "dependencies": {
