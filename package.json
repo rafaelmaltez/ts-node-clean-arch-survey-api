@@ -24,8 +24,10 @@
   },
   "homepage": "https://github.com/rafaelmaltez/ts-node-clean-arch-survey-api#readme",
   "devDependencies": {
+    "@shelf/jest-mongodb": "^4.1.0",
     "@types/bcrypt": "^5.0.0",
     "@types/jest": "^29.0.0",
+    "@types/mongodb": "^4.0.7",
     "@types/node": "^18.7.14",
     "@types/validator": "^13.7.6",
     "git-commit-msg-linter": "^4.1.3",
