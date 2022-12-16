@@ -49,4 +49,10 @@ describe('Account Mongo Repository', () => {
     expect(account.name).toBe('any_name')
     expect(account.name).toBe('any_name')
   })
+
+  test('Should return null if loadByEmail finds no account', async () => {
+    const sut = makeSut()
+    const account = await sut.loadByEmail('any_email')
+    expect(account).toBeFalsy()
+  })
 })
