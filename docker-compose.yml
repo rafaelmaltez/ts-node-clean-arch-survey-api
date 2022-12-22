@@ -1,0 +1,24 @@
+version: "3"
+services:
+  mongo:
+    container_name: mongo-survey-api
+    image: mongo:4.4
+    restart: always
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+  api:
+    container_name: survey-api
+    build: .
+    restart: always
+    image: clean-node-api
+    command: npm start
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/clean-survey-api
+    volumes:
+      - ./dist:/clean-node-survey-api/dist
+    ports:
+      - "3030:3030"
+    links:
+      - mongo

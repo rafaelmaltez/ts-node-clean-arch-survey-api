@@ -1,7 +1,6 @@
-FROM node:16-alpine
+FROM node:16
 WORKDIR /clean-node-survey-api
 COPY package* ./
-RUN npm install --only=prod
+RUN npm install
 COPY ./dist ./dist
-EXPOSE 5000
 CMD npm start
