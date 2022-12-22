@@ -3,7 +3,10 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
-    '!<rootDir>/src/main/**'
+    '!<rootDir>/src/main/**',
+    '!<rootDir>/src/**/*-protocols.ts',
+    '!**/protocols/**',
+    '!**/test/**'
   ],
   coverageDirectory: 'coverage',
   roots: [
@@ -14,5 +17,6 @@ module.exports = {
     '.+\\.ts$': 'ts-jest'
   },
   preset: '@shelf/jest-mongodb',
-  watchPathIgnorePatterns: ['globalConfig']
+  watchPathIgnorePatterns: ['globalConfig'],
+  coverageProvider: 'babel'
 }
