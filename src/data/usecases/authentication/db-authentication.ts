@@ -6,7 +6,7 @@ import {
   Encrypter,
   UpdateAccessTokenRepository
 } from './db-authentication-protocols'
-export default class DbAuthentication implements Authentication {
+export class DbAuthentication implements Authentication {
   constructor (
     private readonly loadAccountByEmailRepository: LoadAccountByEmailRepository,
     private readonly hashComparer: HashComparer,
