@@ -35,7 +35,9 @@ describe('Account Mongo Repository', () => {
       expect(account.name).toBe('any_name')
       expect(account.name).toBe('any_name')
     })
+  })
 
+  describe('loadByEmail()', () => {
     test('Should return an account on loadByEmail success', async () => {
       const sut = makeSut()
       await accountCollection.insertOne({
@@ -50,9 +52,6 @@ describe('Account Mongo Repository', () => {
       expect(account.name).toBe('any_name')
       expect(account.name).toBe('any_name')
     })
-  })
-
-  describe('loadByEmail()', () => {
     test('Should return null if loadByEmail finds no account', async () => {
       const sut = makeSut()
       const account = await sut.loadByEmail('any_email')
@@ -60,7 +59,7 @@ describe('Account Mongo Repository', () => {
     })
   })
 
-  describe('loadByEmail()', () => {
+  describe('updateAccessToken()', () => {
     test('Should update access token on updateAccessToken success', async () => {
       const sut = makeSut()
       const accountData = await accountCollection.insertOne({
